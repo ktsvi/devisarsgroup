@@ -1,0 +1,52 @@
+
+ {% block js %}
+  
+  
+  <!--   Core JS Files   -->
+  <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+  <script src="{{asset('js/core/jquery.min.js')}}"></script>
+    <script src="{{asset('js/transition.js')}}"></script>
+  <!-- script src="{{asset('js/modal.js')}}"></script -->
+  <script src="{{asset('js/tooltip.js')}}"></script>
+  <script src="{{asset('js/popover.js')}}"></script>
+
+  <script src="{{asset('js/core/popper.min.js')}}"></script>
+  <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
+  <script src="{{asset('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+  <!-- Chart JS -->
+  <script src="{{asset('js/plugins/chartjs.min.js')}}"></script>
+  <!--  Notifications Plugin    -->
+  <script src="{{asset('js/plugins/bootstrap-notify.js')}}"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{asset('js/paper-dashboard.min.js?v=2.0.0')}}" type="text/javascript"></script>
+ <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+ <script type="text/javascript" src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/template.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/moment-with-locales.min.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/demo.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('js/js.js') }}"></script>
+
+
+  <!--script>
+    $(document).ready(function() {
+      demo.initChartsPages();
+    });
+  </script -->
+
+ <script type="text/javascript">
+            $('#datetimepicker').datetimepicker({
+                locale: 'es',
+                useCurrent: false,
+                sideBySide: true
+            });
+
+            $(function () {
+              $('.js-popover').popover()
+              $('.js-tooltip').tooltip()
+            })
+</script>
+
+
+ {% endblock %}

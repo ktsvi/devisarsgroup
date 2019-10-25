@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Connectez vous à l'espace d'administration </title>
+<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+<link href="{{asset('css/admin/admin-login.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="loginmodal-container">
+					<h1>Connectez Vous.</h1><br>
+				  <form method="post" action="{{ path('user_check')}}">
+					<input type="text" name="_username" placeholder="Login">
+					<input type="password" name="_password" placeholder="mot de passe">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">S'inscrire</a> - <a href="#">Mot de passe oublié ?</a>
+				  </div>
+</div>
+<footer>
+
+</footer>
+<script langage="javascript" src="{{ asset('js/jquery.js') }}" > </script>
+<script langage="javascript" src="{{ asset('js/bootstrap.min.js') }}" > </script>
+<script langage="javascript" src="{{ asset('js/ajaxUtils.js') }}" > </script>
+<script langage="javascript" src="{{ asset('js/bootstrap-notify.min.js') }}" > </script>
+</body>
+
+</html>

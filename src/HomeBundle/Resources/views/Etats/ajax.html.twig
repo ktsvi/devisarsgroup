@@ -1,0 +1,63 @@
+{% extends "HomeBundle:Default:index.html.twig" %}
+
+{% block title %}{{ parent() }}-Ventes Partielle{% endblock %}
+
+
+{% block url %}
+    <style> 
+      .table { border-collapse: collapse; } 
+      .table th, td { 
+         border-bottom: 1px solid #ddd; 
+         width: 250px; 
+         text-align: left; 
+         align: left; 
+      } 
+  </style>
+{% endblock %}  
+
+
+{% block content %} 
+
+<a id = "loadbandchicken" href = "#">Load bandchicken information</a>  
+   </br> 
+   </br>  
+
+   <table class = "table">  
+      <tbody id = "bandchicken"></tbody>  
+   </table> 
+
+{% block js %}{{ parent() }}
+
+<script language = "javascript">  
+      $(document).ready(function(){
+        
+         $("#loadbandchicken").on("click", function(event){  
+            $.ajax({  
+               url:        '/ajaxpro',  
+               type:       'POST',   
+               dataType:   'json',  
+               async:      true,  
+               
+               success: function(data, status) {  
+                  var e = $('<tr><th>Name</th><th>Address</th></tr>');  
+                  $('#bandchicken').html('');  
+                  $('#bandchicken').append(e);  
+                  
+                  for(i = 0; i < data.length; i++) {  
+                     bandchicken = data[i];  
+                     var e = $('<tr><td id = "code"></td><td id = "desc"></td></tr>');
+                     
+                     $('#code', e).html(bandchicken['code']);  
+                     $('#desc', e).html(bandchicken['desc']);  
+                     $('#bandchicken').append(e);  
+                  }  
+               },  
+               error : function(xhr, textStatus, errorThrown) {  
+                  alert('Ajax request failed.');  
+               }  
+         });  
+      }); 
+      });  
+   </script> 
+  {% endblock %}
+  {% endblock %}

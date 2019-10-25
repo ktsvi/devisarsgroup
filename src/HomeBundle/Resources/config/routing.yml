@@ -1,0 +1,79 @@
+home_homepage:
+    path:     /
+    defaults: { _controller: HomeBundle:Default:index }
+
+user_login:
+    path:     /user-login
+    defaults: { _controller: 'HomeBundle:Login:index' } 
+
+user_check:
+    path:     /check
+
+user_logout:
+    path:     /logout 
+
+layout:
+    path:     /layout
+    defaults: { _controller: HomeBundle:Default:layout }
+
+user_profil:
+    path:     /userprofil
+    defaults: { _controller: HomeBundle:User:userprofil }
+
+user_profil:
+    path:     /userprofil
+    defaults: { _controller: HomeBundle:User:userprofil }
+
+user_profiledit:
+    path:     /userprofiledit
+    defaults: { _controller: HomeBundle:User:userprofiledit }
+
+user_validpassword:
+    path:     /validpassword
+    defaults: { _controller: HomeBundle:User:validpassword }
+
+add_customer:
+    path:     /newcustomer
+    defaults: { _controller: HomeBundle:User:newcustomer } 
+liste_client:
+    path:     /customerlist
+    defaults: { _controller: HomeBundle:User:customerlist }  
+
+count_Customer:
+    path:     /countcustomer
+    defaults: { _controller: HomeBundle:User:countcustomer }
+
+del_customer:
+    path:     /customerdelete{id}
+    defaults: { _controller: HomeBundle:User:customerdelete }
+
+add_project:
+    path:     /addnewproject
+    defaults: { _controller: HomeBundle:Project:addnewproject }
+
+up_project:
+    path:     /projectupdate{id}
+    defaults: { _controller: HomeBundle:Project:projectupdate }
+list_project:
+    path:     /listofproject
+    defaults: { _controller: HomeBundle:Project:listofproject }
+
+list_project_revised:
+    path:     /listofrevisedproject
+    defaults: { _controller: HomeBundle:Project:listofrevisedproject }
+    
+del_project:
+    path:     /deleteproject{id}
+    defaults: { _controller: HomeBundle:Project:deleteproject }
+
+add_devis:
+    path:     /addnewdevis
+    defaults: { _controller: HomeBundle:Devis:addnewdevis }
+
+up_devis:
+    path:     /devisupdate{id}
+    defaults: { _controller: HomeBundle:Devis:devisupdate }
+
+del_devis:
+    path:     /listofdevis
+    defaults: { _controller: HomeBundle:Devis:listofdevis }

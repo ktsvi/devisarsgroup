@@ -1,0 +1,26 @@
+
+
+{% extends "HomeBundle:Default:layout.html.twig" %}
+{% block title %}{{ parent() }}{% endblock %}
+
+
+       {% block menu %}
+        {% include ("HomeBundle:Default:menu.html.twig") %}
+       {% endblock %}
+    
+  {#Main panel #}
+        {% block mainpanel %}
+
+            {% include ("HomeBundle:Default:main-panel.html.twig") %}
+        
+        {% endblock %}
+         
+        {% block content %}
+         
+            {% include ("HomeBundle:Default:content.html.twig") %}
+        {% endblock %}
+
+        {% block footer %}
+        
+      {% include ("HomeBundle:Default:footer.html.twig") %}
+        {% endblock %}

@@ -1,0 +1,70 @@
+{% extends "HomeBundle:Default:index.html.twig" %}
+
+{% block title %}{{ parent() }} - Liste des Projets{% endblock %}
+
+{% block url %}
+ <br> <br>
+<button  class="btn btn-info btn-sm" onclick="javascript:printMachine('state', 'LISTE DES PROJETS SOUMIS')">Imprimer les projets<i class="icon-print"></i></button
+
+<span id="name"></span>
+{% endblock %}
+
+{% block content %} 
+{#{dump(pagination)}#}
+<h5>Liste des projets</h5> 
+<div id="state" class="table-responsive" style="background-color:white"> 
+   <table id="newTable" class = "table">  
+      <thead id="stubborn" class=" text-primary">  
+         <th>Nom du projet</th>  
+         <th>Client</th>  
+         <th>Description</th>  
+         <th>date de début</th> 
+         <th>Cahier de charge</th> 
+         <th>Logo</th>
+         <th colspan="2">Actions</th>
+      </thead>  
+      {% for x in data %} 
+      <tr id="newValues">  
+         <td>{{ x.projectName }}</td>   
+         <td>{{ x.user.firstName }}</td>   
+         <td>{{ x.projectDescription }}</td>
+          <td>{{ x.dateofStart | date("d/m/y") }}</td>
+         <td><a href="/uploads/{{ x.projectDocument }}">Télecharger le CC</a></td>
+         <td><img width="30" src="/uploads/logo/{{ x.logo }}"/></td>
+       {% if app.user.role=="ROLE_ADMIN" %}
+         <td colspan="2"><a href = "{{ path('add_devis', { 'id' : x.id }) }}">Faire le devis</a></td>
+         </tr> 
+       {% endif %}
+      {% endfor %} 
+   </table>
+</div>
+
+<br/>
+        {% if pagination.count>1 %}
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link {% if pagination.page == 1 %}d-none {% endif %}"
+                               href="{{ path('listpaginate_customer',{page:pagination.page-1,key:pagination.key}) }}"
+                               aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        {% for number in 1..pagination.count %}
+                            <li class="page-item {% if number == pagination.page %} active {% endif %}">
+                                <a class="page-link"
+                                   href="{{ path('listpaginate_customer',{page:number,key:pagination.key}) }}">{{ number }}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="page-item">
+                            <a class="page-link {% if pagination.page == pagination.count %}d-none {% endif %}"
+                               href="{{ path('listpaginate_customer',{page:pagination.page+1,key:pagination.key}) }}"
+                               aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+   
+{% endblock %}

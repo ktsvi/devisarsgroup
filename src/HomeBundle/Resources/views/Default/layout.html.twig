@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    {% block title %}DevisARSGroup{% endblock %}
+  </title>
+  <meta charset="utf-8" />
+   {% block css %}
+       {% include ("HomeBundle:Default:css.html.twig") %}
+   {% endblock %}
+
+</head>
+
+<body class="">
+
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+     
+       {% block menu %}
+       {% endblock %}
+
+    </div>
+    
+    {#Main panel #}
+
+        {% block mainpanel %}
+        {% endblock %}  
+   </div> -->
+     <div class="content" id="contentId">
+     
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers"> 
+                      <p class="card-category">PROJETS</p>
+                      <p class="card-title"><span id="idProject"></span>
+                        <p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>Nombre de projet
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">DEVIS</p>
+                      <p class="card-title"> <span id="idCAJournalier">0</span> F
+                        <p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-calendar-o"></i>Valeur totale dévis émis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Clients</p>
+                      <p class="card-title"><span id="nomberofcustomer"></span>
+                        <p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">  
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-clock-o"></i> Nombre de clients
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">PROJET EN COURS</p>
+                      <p class="card-title"><span id="currentProject"></span>
+                      <p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i> Dernier projet<span id="lastproject"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <div class="row">
+         <div class="col-md-12">
+          <div class="row" style="padding-left:1.2%">
+             {% block url %}
+             {% endblock %}
+          </div>
+          {% block content %}
+                
+          {% endblock %}
+        </div>
+        </div>
+
+      </div>
+
+        </div>
+        {% block footer %}
+        {% endblock %}
+    </div>
+  </div>
+
+   {% block js %}
+       {% include ("HomeBundle:Default:js.html.twig") %}
+   {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+/*farm application style*/
+
+.card-stats .icon-big i {
+    line-height: 30px;
+   /* background-color: blue; */
+}
+
+#bluecolor{
+    color: #000000
+}
+
+.sidebar .nav p, .off-canvas-sidebar .nav p {
+    color:#000000;
+}
+
+.sidebar[data-color="white"] .nav li a, .sidebar[data-color="white"] .nav li a i, .sidebar[data-color="white"] .nav li a[data-toggle="collapse"], .sidebar[data-color="white"] .nav li a[data-toggle="collapse"] i, .sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li .sidebar-mini-icon, .sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li > a, .off-canvas-sidebar[data-color="white"] .nav li a, .off-canvas-sidebar[data-color="white"] .nav li a i, .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"], .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"] i, .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li .sidebar-mini-icon, .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li > a {
+    color:#000000;
+}
+
+.card-stats .card-body .numbers .card-category {
+    color: #000000;
+}
+
+/*ajouter la hauteur au champs select à l'affichage */
+select.form-control:not([size]):not([multiple]) {
+    height: calc(3.7rem + 4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 379px){
+    .well{
+        width: 100%
+    }
+   .form-control{
+       width:100%
+   }
+}
+
+.justify-content-end {
+    background: white;
+
+}
+
+#formframe{
+    width: 100%;
+}
+
+#form_save{
+color: rgb(2, 24, 46);
+}
+
+.card-stats .icon-big i {
+    color: orange;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 2px 45px 2px 15px;
+}
+
+
+
+
+
+

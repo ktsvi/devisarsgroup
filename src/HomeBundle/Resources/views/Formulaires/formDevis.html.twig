@@ -1,0 +1,75 @@
+{% extends "HomeBundle:Default:index.html.twig" %}
+
+{% block title %}{{ parent() }}-Devis{% endblock %}
+
+{% block content %} 
+
+{% if success is defined and success=="1" %}
+  <span style="color:green; display:none" id="successMsg"><strong>Ajouté avec succès!</strong></span>
+{% else %}
+    
+{% endif %}
+
+<div id="formframe">
+
+  <h4>Enregistrer le dévis d'un projet</h4>
+  <div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+  <div class="form-group">
+    <label for="">
+     {{ form_label(form.resumeDevis, "Résumé du devis *", {'label_attr': {'class': 'form-check-label'}}) }}
+     {{ form_errors(form.resumeDevis) }}
+    </label>
+     {{ form_widget(form.resumeDevis,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+    <label for="">
+     {{ form_label(form.duration, "Durée estimé pour le projet *", {'label_attr': {'class': 'form-check-label'}}) }}
+     {{ form_errors(form.duration) }}
+    </label>
+     {{ form_widget(form.duration,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.dateofBegining, "Date de début *", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.dateofBegining) }}
+   </label>
+          {{ form_widget(form.dateofBegining,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.costofProject, "Cout du projet *", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.costofProject) }}
+   </label>
+          {{ form_widget(form.costofProject,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.project, "Cout du projet *", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.project) }}
+   </label>
+          {{ form_widget(form.project,{'attr':{'class':'form-control'}}) }}
+  </div>
+
+  {# Les erreurs générales du formulaire. #}
+  {{ form_errors(form) }}
+
+  <div class="modal-footer">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Enregistrer<i class="icon-white icon-ok-sign"></i></button>
+   		<button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-remove"></i> Annuler</button>   
+  </div>
+  {{ form_end(form) }}
+</div>
+</div>
+</div>
+{% block javascripts %}
+    {{parent()}}
+    <script>
+        $('.js-datepicker').datepicker({
+            format:'yyyy.MM.dd'
+        });
+    </script>
+{% endblock %}
+
+{% endblock %}

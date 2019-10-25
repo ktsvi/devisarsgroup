@@ -1,0 +1,60 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+
+    encoders: 
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
+        HomeBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    role_hierarchy: 
+        ROLE_ADMIN: ROLE_USER
+        
+    providers:
+        in_memory:
+            memory: ~
+            
+        db_user_provider: 
+            entity: 
+                class: HomeBundle:User
+                property: login
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            
+        main:
+            pattern: ^/
+            anonymous: ~
+            form_login: 
+                login_path: user_login
+                check_path: user_check
+            provider: db_user_provider
+            logout:
+                path: user_logout
+                target: /
+                
+        #main:
+         #   anonymous: ~
+            # activate different ways to authenticate
+
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            #form_login: ~
+        
+    access_control: 
+        #- { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/user-login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: (^/), roles: ROLE_USER  }
+        - { path: (^/admin/), roles: ROLE_ADMIN  }
+        - { path: /_wdt/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /_profiler/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            # activate different ways to authenticate

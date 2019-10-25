@@ -1,0 +1,33 @@
+.admin-bar{
+    padding:15px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.admin-menu-title{
+    padding:15px;
+}
+
+.admin-menu-title-holder{
+    border-right: 1px solid gainsboro;
+}
+
+.body-table{
+    min-height: 700px;
+}
+
+.body-menu{
+    min-height: 700px;
+}
+.ul-menu{
+    width: 100%;
+}
+
+.li-menu{
+    padding:15px;
+    list-style-type: none;
+    color: greenyellow;
+    //background-color: gainsboro;
+}
+.li-menu a{
+   /* color: blue; */
+}

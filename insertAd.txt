@@ -1,0 +1,1 @@
+INSERT INTO `user`(`firstName`, `name`, `login`, `password`, `email`, `phone`, `gender`, `role`) VALUES ('admin','admin','admin','$2y$12$sH8keDdX4wwDC19D894NtukoO8gYYZIfaKKBAlSeQYe.CvFSakCDq','admin@admin.com','6898654765','Masculin','Admin')

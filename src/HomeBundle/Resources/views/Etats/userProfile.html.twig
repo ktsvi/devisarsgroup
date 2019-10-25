@@ -1,0 +1,57 @@
+{% extends "HomeBundle:Default:index.html.twig" %}
+
+{% block title %}{{ parent() }} - Profil{% endblock %}
+
+
+{% block url %}
+{% endblock %}
+
+{% block content %} 
+
+<div class="row"> 
+<div class="col-md-12"> 
+      <div class="card card-user">
+              <div class="image">
+              
+                <!-- img src="img/default-avatar.PNG" width="70" alt="" -->
+              </div> 
+              <div class="card-body">
+                <div class="author">
+                                <img src="img/default-avatar.PNG" width="70" alt="">
+                  <a href="#"> 
+                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                    <h4><b>PROFIL</b></h4>
+                    <h5 class="title"> Nom : {{ user.name }} {{ user.firstName }}</h5>
+                  </a>
+                  <p class="description">
+                   Vous êtes administrateur de ce système
+                  </p>
+                </div>
+                <p class="description text-center">
+                  Email : {{ user.email }} 
+                </p>
+                <p class="description text-center">
+                  Télephone : {{ user.phone }} 
+                </p>
+                <p class="description text-center">
+                  Sexe : {{ user.gender }} 
+                </p>
+                <p class="description text-center">
+                  Login : {{ user.login }} 
+                </p>
+                <p class="description text-center">
+                  Mot de passe : **************
+                </p>
+              </div>
+              <div class="card-footer">
+                <hr>
+                 <div class="progress progress-striped active well">
+                     <div class="bar"></div>
+                     <div id="pourcentage" class="pull-right"></div>
+                  </div>
+              </div>
+            </div>
+
+            </div>
+
+{% endblock %}

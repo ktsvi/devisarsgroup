@@ -1,0 +1,76 @@
+{% extends "HomeBundle:Default:index.html.twig" %}
+
+{% block title %}{{ parent() }}-Nouveau projet{% endblock %}
+
+{% block content %} 
+
+{% if success is defined and success=="1" %}
+  <span style="color:green; display:none" id="successMsg"><strong>Dépense ajoutée avec succès !!</strong></span>
+{% else %}
+    
+{% endif %}
+
+<div id="formframe">
+
+  <h4>Enregistrer un nouveau projet</h4>
+  <div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+  <div class="form-group">
+    <label for="">
+     {{ form_label(form.projectName, "Libellé de votre projet *", {'label_attr': {'class': 'form-check-label'}}) }}
+     {{ form_errors(form.projectName) }}
+    </label>
+     {{ form_widget(form.projectName,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+    <label for="">
+     {{ form_label(form.projectDescription, "Description du projet *", {'label_attr': {'class': 'form-check-label'}}) }}
+     {{ form_errors(form.projectDescription) }}
+    </label>
+     {{ form_widget(form.projectDescription,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.projectDocument, "Cahier de charge * cliquez ici", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.projectDocument) }}
+   </label>
+          {{ form_widget(form.projectDocument,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.logo, "Logo *", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.logo) }}
+   </label>
+          {{ form_widget(form.logo,{'attr':{'class':'form-control'}}) }}
+  </div>
+  <div class="form-group">
+  <label for="">
+    {{ form_label(form.dateofStart, "Date de début *", {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.dateofStart) }}
+   </label>
+          {{ form_widget(form.dateofStart,{'attr':{'class':'form-control'}}) }}
+  </div>
+   
+
+  {# Les erreurs générales du formulaire. #}
+  {{ form_errors(form) }}
+
+  <div class="modal-footer">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Enregistrer<i class="icon-white icon-ok-sign"></i></button>
+   		<button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-remove"></i> Annuler</button>   
+  </div>
+  {{ form_end(form) }}
+</div>
+</div>
+</div>
+{% block javascripts %}
+    {{parent()}}
+    <script>
+        $('.js-datepicker').datepicker({
+            format:'yyyy.MM.dd'
+        });
+    </script>
+{% endblock %}
+
+{% endblock %}

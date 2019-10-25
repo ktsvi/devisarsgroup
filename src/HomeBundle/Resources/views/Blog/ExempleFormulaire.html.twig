@@ -1,0 +1,131 @@
+
+
+
+{{  form_start(form,{'attr':{'class':'form-horizontal  ','style':'background-color:white;opacity:1'}}) }}
+		
+		<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" >{% if editForm is defined and editForm %}EDITION DE MEDIA {% else %} AJOUT DE MEDIA {% endif %}</h4>
+      	</div>
+		
+		<div class="modal-body  ">
+		
+        		<div class="container " style="width:100%; height:100%">
+        			<br/>
+                		
+                		<br/>
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.titre,'Titre')  }}
+                								</div>	
+                								  {{ form_errors(form.titre) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.titre,{'attr':{'class':'form-control'}}) }}
+                                                        
+                                                    
+                								 	
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.english_title,'titre en anglais')  }}
+                								</div>	
+                								  {{ form_errors(form.english_title) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.english_title,{'attr':{'class':'form-control '}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		
+                		<br/>
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.description,'Description Française')  }}
+                								</div>	
+                								  {{ form_errors(form.description) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.description,{'attr':{'class':'form-control '}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>	
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.commandable,'Cliquable')  }}
+                								</div>	
+                								  {{ form_errors(form.commandable) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.commandable,{'attr':{'class':'form-control'}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>
+                		
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.lienCommandable,'Lien ( si cliquable)')  }}
+                								</div>	
+                								  {{ form_errors(form.lienCommandable) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.lienCommandable,{'attr':{'class':'form-control'}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>
+                	    
+                	    <div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.file,'Fichier ( Image ou Vidéo)')  }}
+                								</div>	
+                								  {{ form_errors(form.file) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.file,{'attr':{'class':'form-control'}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>
+                		
+                		<div class= "row">
+                								 <div class='col-lg-4'>
+                								  {{ form_label(form.alt,'Alternative (si erreur sur fichier)')  }}
+                								</div>	
+                								  {{ form_errors(form.alt) }}
+                								 <div class="col-lg-7">
+                								    
+                								        {{ form_widget(form.alt,{'attr':{'class':'form-control'}}) }}
+                                                      
+                								 </div>
+                								 
+                						
+                		</div>
+                		<br/>
+        
+        
+		</div>
+		</div>
+		
+		<div class="modal-footer">
+    		<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Annuler</button>
+        	<button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Enregistrer</button>
+		
+		</div>
+		{{ form_end(form) }}
